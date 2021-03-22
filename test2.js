@@ -1,3 +1,4 @@
+console.log("hi from custom tool git");
 parcelRequire = (function (e, r, t, n) {
   var i,
     o = "function" == typeof parcelRequire && parcelRequire,
