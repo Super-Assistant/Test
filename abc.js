@@ -1,6 +1,6 @@
-let axiosTag = document.createElement('script');
+let axiosTag = document.createElement("script");
 axiosTag.src = "https://unpkg.com/axios/dist/axios.min.js";
-document.querySelector('body').appendChild(axiosTag);
+document.querySelector("body").appendChild(axiosTag);
 // const { default: axios } = require("axios");
 
 // const { default: axios } = require("axios");
@@ -102,8 +102,7 @@ document.querySelector('body').appendChild(axiosTag);
 //         console.error("Error:", error);
 //       });
 //   },5000)
-  
-  
+
 // };
 
 let Discounts = [
@@ -121,7 +120,7 @@ let Discounts = [
         DiscountType: "INR",
       },
     ],
-    ProductIds: ["39484974792875", "39462533071019", "39462528254123"],
+    ProductIds: ["6570756931782", "6575540076742", "6575540502726"],
   },
   {
     TierName: "SummerSale",
@@ -137,7 +136,7 @@ let Discounts = [
         DiscountType: "INR",
       },
     ],
-    ProductIds: ["39484974792875"],
+    ProductIds: ["6570756931782"],
   },
   {
     TierName: "WinterSale",
@@ -148,7 +147,7 @@ let Discounts = [
         DiscountType: "INR",
       },
     ],
-    ProductIds: ["39462528254123"],
+    ProductIds: ["6575540076742"],
   },
   {
     TierName: "WinterSale",
@@ -159,7 +158,7 @@ let Discounts = [
         DiscountType: "INR",
       },
     ],
-    ProductIds: ["39484974792875"],
+    ProductIds: ["6575540502726"],
   },
 ];
 
@@ -188,9 +187,8 @@ var product_images = document.querySelectorAll(
   'form[action^="/cart"] img[data-cart-item-image]'
 );
 
-
 // checkoutButton[0].type = 'button';
-let shopDomain = Shopify.shop.split('.')[0];
+let shopDomain = Shopify.shop.split(".")[0];
 console.log(shopDomain);
 checkoutButton[0].onclick = (e) => {
   e.preventDefault();
@@ -263,14 +261,10 @@ function inputEvent(e) {
       let undiscountedTotal =
         parseInt(originalPrice) * parseInt(e.target.value);
       let discountedTotalPrice =
-        parseInt(originalPrice) *
-          parseInt(e.target.value) -
-        parseInt(result);
+        parseInt(originalPrice) * parseInt(e.target.value) - parseInt(result);
       console.log(discountedTotalPrice);
 
       if (discountedTotalPrice === undiscountedTotal) {
-            
-
         // let temp = products[i].totalPriceDiv.innerHTML;
         // let interval = window.setInterval(() => {
         //   alert("Interval");
@@ -339,7 +333,7 @@ function inputEvent(e) {
   // } else {
   //   subTotal_Location.insertAdjacentHTML("afterend", `<p>hello</p>`);
   // }
-  
+
   // if (discountedTotalPrice === parseInt(originalTotalPrice)) {
   //   products[
   //     i
@@ -382,9 +376,9 @@ for (let i = 0; i < arr.length; i++) {
   var id = arr[i].id.split("_");
   let productId = id[id.length - 1].split(":")[0];
   let obj = {
-    productName:product_Title_array[i].innerText,
+    productName: product_Title_array[i].innerText,
     productId: productId,
-    productImage:product_images[i].src,
+    productImage: product_images[i].src,
     originalProductQuantity: arr[i].value,
     price: products_Individual_Price_Array[i].innerText.split(" ")[1],
     priceDiv: products_Individual_Price_Array[i],
